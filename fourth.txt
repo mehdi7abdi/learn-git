@@ -1,0 +1,94 @@
+mehdi@mehdi MINGW64 ~
+$ mkdir learn-git
+
+mehdi@mehdi MINGW64 ~
+$ cd learn-git
+
+mehdi@mehdi MINGW64 ~/learn-git
+$ touch third.txt
+
+mehdi@mehdi MINGW64 ~/learn-git
+$ git add third.txt
+fatal: not a git repository (or any of the parent directories): .git
+
+mehdi@mehdi MINGW64 ~/learn-git
+$ git init
+Initialized empty Git repository in C:/Users/mehdi/learn-git/.git/
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ git add third.txt
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ git commit -m "adding third.txt"
+[master (root-commit) b25f21f] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ git log
+commit b25f21fbd0ce622f9a5cc80cf37db4c362640893 (HEAD -> master)
+Author: mehdi7abdi <mehdihca@outlook.fr>
+Date:   Wed Mar 18 16:02:29 2026 +0100
+
+    adding third.txt
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ touch fourth.txt
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ git add fourth.txt
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ git commit -m "adding fourth.txt"
+[master 6d881dd] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ rm third.txt
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ git add -A
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ git commit -m "removing third.txt"
+[master 8c0cb70] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ git log
+commit 8c0cb702a38d4225b7673a9a0e13cd0542dce82a (HEAD -> master)
+Author: mehdi7abdi <mehdihca@outlook.fr>
+Date:   Wed Mar 18 16:05:29 2026 +0100
+
+    removing third.txt
+
+commit 6d881dd51f35bf6e9293ffd7cd9e128929e4e968
+Author: mehdi7abdi <mehdihca@outlook.fr>
+Date:   Wed Mar 18 16:04:14 2026 +0100
+
+    adding fourth.txt
+
+commit b25f21fbd0ce622f9a5cc80cf37db4c362640893
+Author: mehdi7abdi <mehdihca@outlook.fr>
+Date:   Wed Mar 18 16:02:29 2026 +0100
+
+    adding third.txt
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ git config --global core.pager cat
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$ git config --global --list
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+filter.lfs.clean=git-lfs clean -- %f
+user.name=mehdi7abdi
+user.email=mehdihca@outlook.fr
+core.editor=code --wait
+core.pager=cat
+
+mehdi@mehdi MINGW64 ~/learn-git (master)
+$
